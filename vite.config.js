@@ -14,6 +14,7 @@ export default {
         orientation: 'portrait',
         scope: '/',
         start_url: '/',
+        lang: 'fr',
         icons: [
           {
             src: 'icons/icon_x36.png',
