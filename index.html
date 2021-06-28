@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="icons/icon_x144.png">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="black">
+  <link rel="stylesheet" type="text/css" href="./index.css" />
+  <title>Endurance Point</title>
+</head>
+
+<body class="dark:bg-gray-900">
+  <main class="md:w-96 md:mx-auto sm:w-full pl-4 mt-5">
+    <input type="file" id="csv" accept=".csv" style="display: none" />
+    <div>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        id="loadFile">Charger Fichier</button>
+      <br>
+      <form id="infos" class="py-2">
+        <div class="flex flex-wrap content-start">
+          <div class="pr-4">
+            <label class="dark:text-white" for="classe">Classe:</label><br>
+            <select class="" name="classe" id="classe">
+              <option value=""></option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <!-- <option value="-1" disabled>autre</option> -->
+            </select>
+          </div>
+          <div class="">
+            <label class="dark:text-white" for="sexe">Sexe: </label><br>
+            <select class="" name="sexe" id="sexe">
+              <option value=""></option>
+              <option value="F">F</option>
+              <option value="G">G</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="">
+          <label class="dark:text-white" for="distance">Distance (m):</label><br>
+          <input class="form-input" type="number" min="0" pattern="-?[0-9]*(\.[0-9]+)?" id="distance">
+        </div>
+        <br>
+        <div class="">
+          <label class="dark:text-white" for="name">Nom du fichier:</label><br>
+          <input class="w-80 sm:w-full" type="text" pattern=".+" id="name"
+            placeholder="3b1b6 garcons 250m 2019-09-15" />
+        </div>
+        <div class="py-4">
+          <button class="bg-blue-500 disabled:bg-blue-300 disabled:cursor-default hover:bg-blue-700 text-white font-bold py-2 px-4 rounded " id="dlBtn"
+            disabled>Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "endupoint",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4",
+    "vite": "^2.3.8",
+    "vite-plugin-pwa": "^0.8.1"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "exceljs": "^4.2.1",
+    "tailwind-toast": "^1.0.9"
+  }
+}
