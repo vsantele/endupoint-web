@@ -7,16 +7,16 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4",
-    "vite": "^2.3.8",
-    "vite-plugin-pwa": "^0.8.1"
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.1.8",
+    "vite": "^3.1.8",
+    "vite-plugin-pwa": "^0.13.1"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.3.3",
-    "exceljs": "^4.2.1",
-    "tailwind-toast": "^1.0.9"
+    "@tailwindcss/forms": "^0.5.3",
+    "exceljs": "^4.3.0",
+    "tailwind-toast": "^1.1.0"
   },
   "packageManager": "yarn@3.2.4"
 }
