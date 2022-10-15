@@ -17,5 +17,6 @@
     "@tailwindcss/forms": "^0.3.3",
     "exceljs": "^4.2.1",
     "tailwind-toast": "^1.0.9"
-  }
+  },
+  "packageManager": "yarn@3.2.4"
 }
