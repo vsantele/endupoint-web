@@ -1,7 +1,7 @@
-import './index.css'
-import createFile from './createFile'
 import { toast } from 'tailwind-toast'
 import { registerSW } from 'virtual:pwa-register'
+import createFile from './createFile'
+// import './index.css'
 
 let csv, loadFiles, dlBtn, classe, sexe, distance, nom
 
@@ -21,13 +21,13 @@ window.onload = function () {
   dlBtn.onclick = process
 
   registerSW({
-    onOfflineReady () {
+    onOfflineReady() {
       toast().success('Page disponible hors connexion', 'Vous pouvez revenir ici sans connexion internet').as('pill').from('bottom', 'center').show()
     }
   })
 }
 
-function saveFile (name, file) {
+function saveFile(name, file) {
   download(file, name)
   classe.value = ''
   sexe.value = ''
@@ -37,7 +37,7 @@ function saveFile (name, file) {
   dlBtn.disabled = true
 }
 
-function download (file, name) {
+function download(file, name) {
   const blob = new window.Blob([file], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
   const element = document.createElement('a')
   const url = URL.createObjectURL(blob)
@@ -50,7 +50,7 @@ function download (file, name) {
   document.body.removeChild(element)
 }
 
-async function process (e) {
+async function process(e) {
   e.preventDefault()
   try {
     const cla = classe.value

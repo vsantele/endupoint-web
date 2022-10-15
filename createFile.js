@@ -22,12 +22,12 @@ const Cellules = {
   distance: 'brut!$E$2'
 }
 
-function HMStoSecs (hms) {
+function HMStoSecs(hms) {
   const arr = hms.split(':')
   return parseInt(arr[0], 10) * 3600 + parseInt(arr[1], 10) * 60 + parseInt(arr[2], 10)
 }
 
-async function createFile (filename, donnees, classe, type, long) {
+async function createFile(filename, donnees, classe, type, long) {
   const vitesseList = newVitesseList
   const titre = filename
   classe = classe || filename.match(/^\d{1}/)[0]
@@ -166,7 +166,7 @@ async function createFile (filename, donnees, classe, type, long) {
         date.setSeconds(row.time)
         brut.addRow({
           tour: i + 1,
-          temps: date.toISOString().substr(14, 5),
+          temps: date.toISOString().substring(14, 19),
           diff: i > 0 ? getDiff(row.time, triEle[i - 1].time) : ''
         })
       })
@@ -177,11 +177,11 @@ async function createFile (filename, donnees, classe, type, long) {
   return wb.xlsx.writeBuffer()
 }
 
-function getDiff (cur, prev) {
+function getDiff(cur, prev) {
   const date = new Date(null)
   const diff = cur - prev
   date.setSeconds(diff)
-  return date.toISOString().substr(14, 5)
+  return date.toISOString().substring(14, 19)
 }
 
 export default createFile
