@@ -8,11 +8,11 @@ import Excel from 'exceljs'
 // oldVitesseList.set('F',  {min: 2.22, max: 11})
 
 const newVitesseList = new Map()
-newVitesseList.set('F', { min: 2.25, max: 12.00 })
-newVitesseList.set('3G', { min: 2.75, max: 12.50 })
-newVitesseList.set('4G', { min: 3.25, max: 13.00 })
-newVitesseList.set('5G', { min: 3.75, max: 13.50 })
-newVitesseList.set('6G', { min: 3.75, max: 13.50 })
+newVitesseList.set('F', { min: 2.25, max: 12.00, sMin: 0.5, sMax: 20 })
+newVitesseList.set('3G', { min: 2.75, max: 12.50, sMin: 0.5, sMax: 20 })
+newVitesseList.set('4G', { min: 3.25, max: 13.00, sMin: 0.5, sMax: 20 })
+newVitesseList.set('5G', { min: 3.75, max: 13.50, sMin: 0.5, sMax: 20 })
+newVitesseList.set('6G', { min: 3.75, max: 13.50, sMin: 0.5, sMax: 20 })
 
 const Cellules = {
   vitesseMin: 'brut!$F$2',
@@ -104,8 +104,8 @@ async function createFile(filename, donnees, classe, type, long) {
   }
   ]
   brut.getRow(1).values = ['Id', 'Tour', 'Temps', 'Différence', 'Distance', 'Vitesse', 'Points']
-  brut.getRow(2).values = ['', '', '', '', long, vitesse.min, 0.5]
-  brut.getRow(3).values = ['', '', '', '', '', vitesse.max, 20]
+  brut.getRow(2).values = ['', '', '', '', long, vitesse.min, vitesse.sMin]
+  brut.getRow(3).values = ['', '', '', '', '', vitesse.max, vitesse.sMax]
   const dataRaw = donnees.toString().split('\n')
 
   const data = []
